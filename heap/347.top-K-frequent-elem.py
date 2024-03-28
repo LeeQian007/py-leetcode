@@ -1,19 +1,10 @@
 from typing import List
 
-
+# bucket sort(n) or min Heap(nlogk) or sort(nlogn)
 class Solution:
     @staticmethod
     def topKFrequent(nums: List[int], k: int) -> List[int]:
-        # nlogn
-        # count = {}  # { 1: 3 times }
-        # for n in nums:
-        #     count[n] = count.get(n, 0) + 1
-        #
-        # sorted_count = sorted(count.items(), key=lambda x:x[1], reverse=True)
-        # top_k = sorted_count[:k]
-        #
-        # top_keys = [key for key, _ in top_k]
-        # return top_keys
+        # bucket sort
         count = {}
         freq = [[] for i in range(len(nums) + 1)]
         for n in nums:
